@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="100dp"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@drawable/bg_movie_card"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="12dp"
+    android:background="@drawable/bg_cast_card"
+    android:gravity="center_horizontal"
+    android:elevation="4dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/ivCast"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        android:contentDescription="@string/app_name" />
 
     <TextView
-        android:gravity="center_horizontal"
         android:id="@+id/tvMemberName"
-        android:textColor="@color/md_theme_primary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp" />
+        android:layout_marginTop="8dp"
+        android:text="Actor Name"
+        android:textColor="@color/md_theme_primary"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:gravity="center" />
 
     <TextView
-        android:gravity="center_horizontal"
         android:id="@+id/tvCharacterName"
-        android:textColor="@color/md_theme_onSurface"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp" />
-
+        android:layout_marginTop="2dp"
+        android:text="as Character"
+        android:textColor="@color/md_theme_onSurfaceVariant"
+        android:textSize="13sp"
+        android:gravity="center" />
 </LinearLayout>
