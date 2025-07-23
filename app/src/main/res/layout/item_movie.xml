@@ -1,74 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_movie_card"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="10dp"
-    android:layout_marginHorizontal="10dp"
-    android:paddingVertical="5dp"
-    android:layout_marginVertical="5dp"
-    >
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="@android:color/white">
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivMovie"
-        app:shapeAppearanceOverlay="@style/corner10"
-        android:layout_width="120dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:padding="12dp">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/md_theme_primary"
-        app:layout_constraintStart_toEndOf="@id/ivMovie"
-        app:layout_constraintTop_toTopOf="@id/ivMovie" />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivMovie"
+            android:layout_width="110dp"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <RatingBar
-        android:id="@+id/rating"
-        style="@style/Widget.AppCompat.RatingBar.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:isIndicator="false"
-        android:numStars="5"
-        android:stepSize="0.5"
-        app:layout_constraintStart_toEndOf="@id/ivMovie"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Movie Title"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/md_theme_primary"
+            app:layout_constraintStart_toEndOf="@id/ivMovie"
+            app:layout_constraintTop_toTopOf="@id/ivMovie"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tvRating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:textColor="@color/md_theme_primary"
-        android:textSize="11sp"
-        app:layout_constraintBottom_toBottomOf="@id/rating"
-        app:layout_constraintStart_toEndOf="@id/rating"
-        app:layout_constraintTop_toTopOf="@id/rating" />
+        <RatingBar
+            android:id="@+id/rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="0.5"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toEndOf="@id/ivMovie" />
 
-    <TextView
-        android:id="@+id/tvOverview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:ellipsize="end"
-        android:maxLines="4"
-        android:textColor="@color/md_theme_primary"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/rating"
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.5"
+            android:textSize="12sp"
+            android:textColor="@color/md_theme_primary"
+            android:layout_marginStart="6dp"
+            app:layout_constraintStart_toEndOf="@id/rating"
+            app:layout_constraintBottom_toBottomOf="@id/rating"
+            app:layout_constraintTop_toTopOf="@id/rating" />
 
-        app:layout_constraintTop_toBottomOf="@id/rating" />
+        <TextView
+            android:id="@+id/tvOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="0dp"
+            android:text="This is a short movie overview that describes the content of the film in a few lines only."
+            android:textSize="13sp"
+            android:textColor="@android:color/darker_gray"
+            android:ellipsize="end"
+            android:maxLines="4"
+            app:layout_constraintTop_toBottomOf="@id/rating"
+            app:layout_constraintStart_toEndOf="@id/ivMovie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/ivMovie" />
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
