@@ -4,24 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/md_theme_background"
     tools:context=".screen.home.HomeFragment">
 
+    <!-- Section Title -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@color/md_theme_surfaceVariant"
-        android:paddingHorizontal="10dp"
-        android:paddingVertical="4dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/bg_section_header"
+        android:elevation="2dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
         android:text="@string/movies"
         android:textColor="@color/md_theme_onSurfaceVariant"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.02" />
 
+    <!-- Movie List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMovies"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
 
 </LinearLayout>
